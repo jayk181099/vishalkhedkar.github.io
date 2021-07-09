@@ -8,6 +8,8 @@ function calc() {
   var dbl = (parseInt(document.getElementById('dblm').value) / 40) * 100;
   var uml = (parseInt(document.getElementById('umlm').value) / 40) * 100;
   var mp = (parseInt(document.getElementById('mpm').value) / 50) * 100;
+  var tel = (parseInt(document.getElementById('tel').value) / 40) * 100;
+
 
   var gradep = [
     gradePoints(java),
@@ -18,25 +20,27 @@ function calc() {
     gradePoints(javal),
     gradePoints(dbl),
     gradePoints(uml),
-    gradePoints(mp)
+    gradePoints(mp),
+    gradePoints(tel)
   ];
 
   console.log(gradep);
 
   var total_credits =
-    4 * gradep[0] +
-    4 * gradep[1] +
+    3 * gradep[0] +
+    3 * gradep[1] +
     4 * gradep[2] +
     4 * gradep[3] +
     3 * gradep[4] +
     2 * gradep[5] +
     2 * gradep[6] +
     2 * gradep[7] +
-    1 * gradep[8];
+    1 * gradep[8] +
+    1 * gradep[9];
 
   console.log(total_credits);
 
-  var gpa = parseFloat((total_credits / 26).toPrecision(3));
+  var gpa = parseFloat((total_credits / 25).toPrecision(3));
 
   document.getElementById('res').innerHTML =
     '<h2>Your GPA is: ' + gpa + '</h2>';
